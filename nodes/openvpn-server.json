@@ -1,0 +1,268 @@
+{
+  "name": "openvpn-server",
+  "override": {
+    "openvpn": {
+      "key": {
+        "org": "Spol Corp.",
+        "email": "seb@spol.co",
+        "size": 2048
+      },
+      "push_options": {
+        "dhcp-option": [
+          "DNS 8.8.8.8",
+          "DNS 1.1.1.1"
+        ],
+        "redirect-gateway": "def1 bypass-dhcp"
+      }
+    }
+  },
+  "normal": {
+    "knife_zero": {
+      "host": "178.62.111.204"
+    },
+    "tags": [
+
+    ]
+  },
+  "default": {
+    "apt": {
+      "cacher_dir": "/var/cache/apt-cacher-ng",
+      "cacher_interface": null,
+      "cacher_port": 3142,
+      "compiletime": false,
+      "compile_time_update": false,
+      "key_proxy": "",
+      "periodic_update_min_delay": 86400,
+      "launchpad_api_version": "1.0",
+      "unattended_upgrades": {
+        "enable": false,
+        "update_package_lists": true,
+        "allowed_origins": [
+          "Ubuntu xenial"
+        ],
+        "origins_patterns": [
+
+        ],
+        "package_blacklist": [
+
+        ],
+        "auto_fix_interrupted_dpkg": false,
+        "minimal_steps": false,
+        "install_on_shutdown": false,
+        "mail": null,
+        "mail_only_on_error": true,
+        "remove_unused_dependencies": false,
+        "automatic_reboot": false,
+        "automatic_reboot_time": "now",
+        "dl_limit": null,
+        "random_sleep": null
+      },
+      "cacher_client": {
+        "cacher_server": {
+
+        }
+      },
+      "confd": {
+        "force_confask": false,
+        "force_confdef": false,
+        "force_confmiss": false,
+        "force_confnew": false,
+        "force_confold": false,
+        "install_recommends": true,
+        "install_suggests": false
+      }
+    },
+    "yum-epel": {
+      "repos": [
+        "epel",
+        "epel-debuginfo",
+        "epel-source",
+        "epel-testing",
+        "epel-testing-debuginfo",
+        "epel-testing-source"
+      ]
+    },
+    "yum": {
+      "epel-debuginfo": {
+        "repositoryid": "epel-debuginfo",
+        "description": "Extra Packages for 16 - $basearch - Debug",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-source": {
+        "repositoryid": "epel-source",
+        "description": "Extra Packages for 16 - $basearch - Source",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-source-16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-debuginfo": {
+        "repositoryid": "epel-testing-debuginfo",
+        "description": "Extra Packages for 16 - $basearch - Testing Debug",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-source": {
+        "repositoryid": "epel-testing-source",
+        "description": "Extra Packages for 16 - $basearch - Testing Source",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-source-epel16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing": {
+        "repositoryid": "epel-testing",
+        "description": "Extra Packages for 16 - $basearch - Testing ",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel": {
+        "repositoryid": "epel",
+        "description": "Extra Packages for 16 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true,
+        "make_cache": true
+      }
+    },
+    "openvpn": {
+      "root_group": "root",
+      "fs_prefix": "",
+      "configure_default_server": true,
+      "git_package": false,
+      "key": {
+        "ca_expire": 3650,
+        "expire": 3650,
+        "size": 2048,
+        "country": "US",
+        "province": "CA",
+        "city": "San Francisco",
+        "org": "Fort Funston",
+        "email": "admin@foobar.com",
+        "message_digest": "sha256"
+      },
+      "client_prefix": "vpn-prod",
+      "key_dir": "/etc/openvpn/keys",
+      "signing_ca_key": "/etc/openvpn/keys/ca.key",
+      "signing_ca_cert": "/etc/openvpn/keys/ca.crt",
+      "user_query": "*:*",
+      "cookbook_user_conf": "openvpn",
+      "user_databag": "users",
+      "type": "server",
+      "subnet": "10.8.0.0",
+      "netmask": "255.255.0.0",
+      "gateway": "vpn.",
+      "client_cn": "client",
+      "server_verification": null,
+      "push_routes": [
+
+      ],
+      "push_options": [
+
+      ],
+      "config": {
+        "user": "nobody",
+        "group": "nogroup",
+        "local": "178.62.111.204",
+        "proto": "udp",
+        "port": "1194",
+        "keepalive": "10 120",
+        "log": "/var/log/openvpn.log",
+        "push": null,
+        "script-security": 2,
+        "up": "/etc/openvpn/server.up.sh",
+        "persist-key": "",
+        "persist-tun": "",
+        "comp-lzo": "",
+        "ca": "/etc/openvpn/keys/ca.crt",
+        "key": "/etc/openvpn/keys/server.key",
+        "cert": "/etc/openvpn/keys/server.crt",
+        "dh": "/etc/openvpn/keys/dh2048.pem",
+        "crl-verify": "/etc/openvpn/crl.pem",
+        "server": "10.8.0.0 255.255.0.0",
+        "dev": "tun0"
+      }
+    }
+  },
+  "automatic": {
+    "fqdn": "openvpn-server",
+    "os": "linux",
+    "os_version": "4.4.0-122-generic",
+    "hostname": "openvpn-server",
+    "ipaddress": "178.62.111.204",
+    "roles": [
+
+    ],
+    "recipes": [
+      "sp_openvpn",
+      "sp_openvpn::default",
+      "openvpn::server",
+      "openvpn::enable_ip_forwarding",
+      "openvpn::install",
+      "openvpn::service",
+      "openvpn::users"
+    ],
+    "platform": "ubuntu",
+    "platform_version": "16.04",
+    "cloud": {
+      "public_ipv4_addrs": [
+        "178.62.111.204"
+      ],
+      "public_ipv6_addrs": [
+        "2a03:b0c0:1:d0::1dd:2001"
+      ],
+      "provider": "digital_ocean",
+      "public_ipv4": "178.62.111.204",
+      "public_ipv6": "2a03:b0c0:1:d0::1dd:2001"
+    },
+    "cloud_v2": {
+      "public_ipv4_addrs": [
+        "178.62.111.204"
+      ],
+      "public_ipv6_addrs": [
+        "2a03:b0c0:1:d0::1dd:2001"
+      ],
+      "provider": "digital_ocean",
+      "public_ipv4": "178.62.111.204",
+      "public_ipv6": "2a03:b0c0:1:d0::1dd:2001"
+    },
+    "chef_packages": {
+      "chef": {
+        "version": "13.8.5",
+        "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.4.0/gems/chef-13.8.5/lib"
+      },
+      "ohai": {
+        "version": "13.8.0",
+        "ohai_root": "/opt/chef/embedded/lib/ruby/gems/2.4.0/gems/ohai-13.8.0/lib/ohai"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[sp_openvpn]"
+  ]
+}

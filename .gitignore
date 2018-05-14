@@ -1,0 +1,6 @@
+server/
+local-mode-cache/
+cookbooks/
+client/
+.vagrant
+.DS_Store

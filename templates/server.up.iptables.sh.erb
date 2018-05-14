@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# This script will be run by OpenVPN on startup via the 'up' configuration
+# directive in /etc/openvpn/server.conf.
+#
+# Enable forwarding
+
+iptables -t nat -A POSTROUTING -s 10.8.0.0/16 -o eth0 -j MASQUERADE
+ip6tables -t nat -A POSTROUTING -s fd00::/112 -j SNAT --to <%= node['cloud_v2']['public_ipv6'] %>
